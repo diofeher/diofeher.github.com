@@ -296,6 +296,7 @@ Full-Width Styles
   border-top: dashed 1px #212121;
   border-bottom: dashed 1px #212121;
   width: 52%;
+  min-height:22em;
   margin: auto;
 }
 
