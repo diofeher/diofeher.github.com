@@ -2,7 +2,6 @@
 <html>
 
   <head>
-    <link href='http://fonts.googleapis.com/css?family=Amaranth:400italic,400,700,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:400italic,400,700,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Abel:400,400italic' rel='stylesheet' type='text/css'>
@@ -24,7 +23,7 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
           <h1 id="project_title"><a href="/">dio<strong>feher</strong></a></h1>
-          <ul>
+          <ul class="menu">
             {% for page in site.pages %}
             {% if page.title %}
             <li><a href="{{ page.url }}">{{ page.title }}</a></li>
@@ -32,11 +31,19 @@
             {% endfor %}
           </ul>
 
-          <ul class="social-buttons">
+          <ul class="social">
+            <li><a href="https://github.com/diofeher" class="ss-icon ss-social-circle">octocat</a></li>
+            <li><a href="https://twitter.com/diofeher" class="ss-icon ss-social-circle">twitter</a></li>
+            <li><a href="http://linkedin.com/in/diofeher/" class="ss-icon ss-social-circle">linkedin</a></li>
+            <li><a href="http://facebook.com/diofeher/" class="ss-icon ss-social-circle">facebook</a></li>
+            <li><a href="http://feeds.feedburner.com/diofeher" class="ss-icon ss-social-circle">rss</a></li>
+          </ul>
+
+<!--           <ul class="social-buttons">
             <li class="twitter"><a href="https://www.twitter.com/diofeher/"></a></li>
             <li class="facebook"><a href="https://www.facebook.com/diofeher/"></a></li>
             <li class="linkedin"><a href="http://www.linkedin.com/in/diofeher/"></a></li>
-          </ul>
+          </ul> -->
         </header>
     </div>
 

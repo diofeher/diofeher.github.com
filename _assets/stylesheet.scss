@@ -1,8 +1,11 @@
+@charset "UTF-8";
 $primary_color: #9C3A2F;
 $bg_color: #F0F0F0;
 $text_color: #DF9268;
 $read_color: #222222;
 $global_width: 52%;
+$hover_color: #83453E;
+
 /*******************************************************************************
 Falling in love
 Theme by @diofeher
@@ -107,7 +110,7 @@ a {
   text-shadow: none;
 }
 
-a.trans, #project_title {
+a.trans, #project_title, .social li a {
   transition: color 0.5s ease;
   transition: text-shadow 0.5s ease;
   -webkit-transition: color 0.5s ease;
@@ -120,8 +123,8 @@ a.trans, #project_title {
   -ms-transition: text-shadow 0.5s ease;
 }
 
-#main_content a.trans:hover, #project_title a:hover {
-  color: #83453E;
+#main_content a.trans:hover, #project_title a:hover, .social li a:hover {
+  color: $hover_color;
   text-shadow: $text_color 0px 0px 2px;
 }
 
@@ -145,36 +148,6 @@ a.trans, #project_title {
 #main_content .blog-container h2.title {
   display:inline;
   text-transform:lowercase;
-}
-#header_wrap ul.social-buttons {
-  position: absolute;
-  right: 0;
-  bottom: -10px;
-}
-
-#header_wrap ul.social-buttons li {
-  height:36px;
-  width:36px;
-  display: inline-block;
-  background: url('../images/icons.png') repeat center;
-}
-
-#header_wrap ul.social-buttons li a {
-  display: block;
-  height: inherit;
-  width: inherit;
-}
-
-#header_wrap ul.social-buttons li.twitter {
-  background-position: -244px -54px;
-}
-
-#header_wrap ul.social-buttons li.facebook {
-  background-position: -45px -54px;
-}
-
-#header_wrap ul.social-buttons li.linkedin {
-  background-position: -283px -11px;
 }
 
 .github-widget {
@@ -330,7 +303,7 @@ Full-Width Styles
   margin:0 5px;
 }
 
-#header_wrap ul li a:hover {
+#header_wrap ul.menu li a:hover {
   text-decoration: underline;
 }
 
@@ -417,3 +390,65 @@ Small Device Styles
   }
 
 }
+
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2012 Oak Studios LLC
+* 
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-social.css" rel="stylesheet" />
+*/
+
+@font-face {
+  font-family: "SSSocial";
+  src: url('ss-social-circle.eot');
+  src: url('ss-social-circle.eot?#iefix') format('embedded-opentype'),
+       url('ss-social-circle.woff') format('woff'),
+       url('ss-social-circle.ttf') format('truetype'),
+       url('ss-social-circle.svg#SSSocialCircle') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SSSocial";
+  src: url('ss-social-regular.eot');
+  src: url('ss-social-regular.eot?#iefix') format('embedded-opentype'),
+       url('ss-social-regular.woff') format('woff'),
+       url('ss-social-regular.ttf') format('truetype'),
+       url('ss-social-regular.svg#SSSocialRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.ss-icon, .ss-icon.ss-social, .ss-icon.ss-social-circle,
+[class^="ss-"]:before, [class*=" ss-"]:before, 
+[class^="ss-"][class*=" ss-social"]:before, [class*=" ss-"][class*=" ss-social"]:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"][class*=" ss-social"].right:after, [class*=" ss-"][class*=" ss-social"].right:after{
+  font-family: "SSSocial";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+.ss-icon.ss-social-circle, 
+[class^="ss-"].ss-social-circle:before, [class*=" ss-"].ss-social-circle:before,
+[class^="ss-"].ss-social-circle.right:after, [class*=" ss-"].ss-social-circle.right:after{
+  font-weight: bold;
+}
+
+[class^="ss-"].right:before, [class^="ss-"][class*=" ss-social"].right:before{display:none;content:'';}
+
+.ss-facebook:before,.ss-facebook.right:after{content:''}.ss-twitter:before,.ss-twitter.right:after{content:''}.ss-linkedin:before,.ss-linkedin.right:after{content:''}.ss-googleplus:before,.ss-googleplus.right:after{content:''}.ss-tumblr:before,.ss-tumblr.right:after{content:''}.ss-wordpress:before,.ss-wordpress.right:after{content:''}.ss-blogger:before,.ss-blogger.right:after{content:''}.ss-posterous:before,.ss-posterous.right:after{content:''}.ss-youtube:before,.ss-youtube.right:after{content:''}.ss-vimeo:before,.ss-vimeo.right:after{content:''}.ss-flickr:before,.ss-flickr.right:after{content:''}.ss-instagram:before,.ss-instagram.right:after{content:''}.ss-pinterest:before,.ss-pinterest.right:after{content:''}.ss-dribbble:before,.ss-dribbble.right:after{content:''}.ss-behance:before,.ss-behance.right:after{content:''}.ss-github:before,.ss-github.right:after{content:''}.ss-octocat:before,.ss-octocat.right:after{content:''}.ss-paypal:before,.ss-paypal.right:after{content:''}.ss-foursquare:before,.ss-foursquare.right:after{content:''}.ss-skype:before,.ss-skype.right:after{content:''}.ss-rdio:before,.ss-rdio.right:after{content:''}.ss-spotify:before,.ss-spotify.right:after{content:''}.ss-lastfm:before,.ss-lastfm.right:after{content:''}.ss-mail:before,.ss-mail.right:after{content:'✉'}.ss-like:before,.ss-like.right:after{content:'👍'}.ss-rss:before,.ss-rss.right:after{content:''}
