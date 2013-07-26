@@ -1,6 +1,7 @@
 ---
 layout: default
 permalink: /about/
+title: about
 ---
 
 Diógenes, developer from João Pessoa, PB, Brazil.
