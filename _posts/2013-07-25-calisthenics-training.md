@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Calisthenics Training
-categories : [lessons, beginner]
-image: /img/road.jpg
+tags: [calisthenics]
+comments: true
 ---
 
 Finally today I've started to train calisthenics.

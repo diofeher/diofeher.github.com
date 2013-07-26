@@ -4,17 +4,8 @@ permalink: /about/
 title: about
 ---
 
-Diógenes, developer from João Pessoa, PB, Brazil.
+Diógenes Fernandes is software engineer at crowdSPRING. He currently lives in João Pessoa, PB, Brazil.
 
-Like to do calisthenics, eat healthy food, code.
+In his free time he enjoys to do calisthenics training, watch to good movies, play league of legends and hangout with girlfriend, friends and family.
 
-calisthenics
-------------
-
-permalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: prettypermalink: pretty
-
-
-uncollege
----------
-
-eirjaerijeraiaejiearja
+If you want to contact him, please use social links in the header of this site.
