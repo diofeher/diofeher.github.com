@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url(pygment_trac.css);
 /*******************************************************************************
 Falling in love
 Theme by @diofeher
@@ -316,13 +315,6 @@ Small Device Styles
 * and place this within your <head> tags.
 * <link href="webfonts/ss-social.css" rel="stylesheet" />
 */
-@font-face {
-  font-family: "SSSocial";
-  src: url("/assets/ss-social-circle.eot");
-  src: url("/assets/ss-social-circle.eot?#iefix") format("embedded-opentype"), url("/assets/ss-social-circle.woff") format("woff"), url("ss-social-circle.ttf") format("truetype"), url("/assets/ss-social-circle.svg#SSSocialCircle") format("svg");
-  font-weight: bold;
-  font-style: normal; }
-
 @font-face {
   font-family: "SSSocial";
   src: url("/assets/ss-social-regular.eot");
