@@ -5,7 +5,7 @@ layout: default
 {% if post.draft != true %}
 <div class="blog-container">
 <h2 class="title"><a class="trans" href="{{ post.url }}">{{ post.title }}</a></h2>
-<span class="date">{{ post.date | date: "%d %B %Y" }}</span>
+<time class="date">{{ post.date | date: "%d %B %Y" }}</time>
 </div>
 {% endif %}
 {% endfor %}
