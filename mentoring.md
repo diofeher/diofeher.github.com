@@ -10,7 +10,7 @@ Every major step forward in my life so far has been inspired and encouraged by t
 
 I’ve had so many great experiences in my life, and I’d love to share them if you’re considering pursuing a similar path.
 
-- Joined Google Summer of Code twice as student.
+- Joined Google Summer of Code twice as student (MoinMoin and Sencha Labs).
 - Currently working as software engineer at [crowdSPRING](http://crowdspring.com), a company chicago-based, world's #1 marketplace for logos, graphic design and naming.
 - Avid reader, interested in a wide range of areas, from calisthenics to liberalism.
 
