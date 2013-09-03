@@ -305,6 +305,12 @@ Small Device Styles
   h6 {
     font-size: 12px; }
 
+  #main_content .blog-container .date {
+    display: block;
+    margin: 0;
+    float:none;
+  }
+
   code, pre {
     min-width: 320px;
     max-width: 480px;
