@@ -57,13 +57,13 @@ h1, h2, h3, h4, h5, h6, a {
   letter-spacing: -1px; }
 
 h1 {
-  font-size: 40px; }
+  font-size: 2.5em; }
 
 h2 {
-  font-size: 28px; }
+  font-size: 1.75em; }
 
 h3 {
-  font-size: 24px; }
+  font-size: 1.5em; }
 
 h4 {
   font-size: 21px; }
@@ -255,7 +255,7 @@ Full-Width Styles
   margin: 0;
   color: #fff;
   text-shadow: #111 0px 0px 10px;
-  font-size: 56px; }
+  font-size: 3.5em; }
 
 #main_content_wrap {
   border-top: dashed 1px #222222;
@@ -278,12 +278,15 @@ Small Device Styles
     font-size: 14px; }
 
   .inner {
-    min-width: 320px;
+    min-width: 270px;
     max-width: 480px; }
 
   #project_title {
     font-size: 32px; }
 
+  #main_content_wrap {
+    width:100%;
+  }
   h1 {
     font-size: 28px; }
 
