@@ -3,9 +3,12 @@ layout: default
 ---
 {% for post in site.posts %}
 {% if post.draft != true %}
+{% if post.type == nil %}
 <div class="blog-container">
 <h2 class="title"><a class="trans" href="{{ post.url }}">{{ post.title }}</a></h2>
 <time class="date">{{ post.date | date: "%d %B %Y" }}</time>
 </div>
+{% endif %}
+
 {% endif %}
 {% endfor %}

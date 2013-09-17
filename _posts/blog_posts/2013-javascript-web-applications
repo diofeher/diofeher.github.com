@@ -1,0 +1,3 @@
+* qdo se usa new, um novo contexto é criado, não usando-se o global
+
+* pra add funcao a uma class Person.find = function e instancia Person.prototype.find = function
