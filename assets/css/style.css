@@ -166,10 +166,10 @@ pre code {
   box-shadow: none; }
 
 blockquote {
-  color: #666;
-  margin-bottom: 20px;
-  padding: 0 0 0 20px;
-  border-left: 3px solid #bbb; }
+  font-size: 1.15em;
+color: #423f37;
+font-weight: 600;
+}
 
 ul, ol, dl {
   margin-bottom: 15px; }
@@ -436,3 +436,9 @@ Small Device Styles
 
 .ss-rss:before, .ss-rss.right:after {
   content: ''; }
+
+article small {
+  font-size: 0.8em;
+padding-left: 3em;
+color: #999;
+}
