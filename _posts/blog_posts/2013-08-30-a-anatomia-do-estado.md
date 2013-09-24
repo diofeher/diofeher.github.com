@@ -1,3 +1,11 @@
+---
+layout: post
+title: A anatomia do estado
+tags: [liberalism]
+comments: true
+draft: true
+---
+
 To numa vibe libertária, agora acabei de ler o "Anatomia do Estado" do Murray Rothbard.
 
 Gostei muito de como ele dividiu o assunto, 
