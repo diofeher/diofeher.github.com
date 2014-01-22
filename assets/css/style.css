@@ -244,8 +244,10 @@ Full-Width Styles
   text-decoration: underline; }
 
 #header_wrap .inner {
-  padding: 50px 10px 30px 10px;
-  text-align: center; }
+  padding: 0 10px 0 10px;
+  text-align: center;
+  position:fixed;
+}
 
 #header:hover {
   color: #0069ba;
@@ -258,17 +260,18 @@ Full-Width Styles
   font-size: 3.5em; }
 
 #main_content_wrap {
-  border-top: dashed 1px #222222;
-  width: 52%;
-  min-height: 22em;
-  margin: auto; }
+  min-height: 600px;
+}
 
 #disqus_thread {
   width: 52%;
-  margin: auto; }
+  margin: auto;
+}
 
 #main_content {
-  padding-top: 20px; }
+  padding-top: 20px;
+  width:60%;
+}
 
 /*******************************************************************************
 Small Device Styles
