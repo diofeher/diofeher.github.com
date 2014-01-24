@@ -445,3 +445,29 @@ article small {
 padding-left: 3em;
 color: #999;
 }
+
+/* VERTICAL ALIGNMENT */
+.pai {
+  background-color:red;
+  height:150px;
+  width:200px;
+}
+.filho {
+  background:yellow;
+  width:50px;
+  height:50px;
+  margin:auto;
+}
+
+.filho1 {
+  position:relative;
+  top:50%;
+}
+
+.filho2 {
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
