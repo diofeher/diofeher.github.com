@@ -98,7 +98,9 @@ a.trans, #project_title, .social li a {
   text-shadow: #df9268 0px 0px 2px; }
 
 #main_content .blog-container {
-  display: block; }
+  display: block; 
+  clear:both;
+}
 
 .date {
   color: #df9268; }
@@ -111,7 +113,7 @@ a.trans, #project_title, .social li a {
   text-decoration: underline; }
 
 #main_content .blog-container h2.title {
-  display: inline;
+  float:left;
   text-transform: lowercase; }
 
 .github-widget {
@@ -273,6 +275,17 @@ Full-Width Styles
   width:60%;
 }
 
+@media screen and (max-width: 1000px) {
+  #header_wrap header.inner {
+    position:static;
+  }
+  #main_content .blog-container .date, #main_content .blog-container h2.title{
+  float: none;
+  }
+  #main_content .blog-container {
+    text-align:center;
+  }
+}
 /*******************************************************************************
 Small Device Styles
 *******************************************************************************/
@@ -282,7 +295,8 @@ Small Device Styles
 
   .inner {
     min-width: 270px;
-    max-width: 480px; }
+    max-width: 480px;
+  }
 
   #project_title {
     font-size: 32px; }
