@@ -10,6 +10,5 @@ String.prototype.escapeHTML = function () {
 
 $('code').val( function() {
 	var $this = $(this)[0];
-	console.log($this);
 	$this.innerHTML = $this.innerHTML.escapeHTML();
 });
