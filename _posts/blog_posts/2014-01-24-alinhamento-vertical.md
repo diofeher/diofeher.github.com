@@ -7,8 +7,7 @@ comments: true
 Um problema recorrente quando se desenvolve layouts é o alinhamento vertical. Existem diversas opções disponíveis, usando pseudo-elementos, inserir outro elemento depois, usar javascript... Uma solução elegante pra esse problema utiliza a propriedade transform do CSS3.
 
 <pre lang="html">
-<code>
-<style>
+<code class="language-css">
 .pai {
 	background-color:red;
 	height:200px;
@@ -20,7 +19,6 @@ Um problema recorrente quando se desenvolve layouts é o alinhamento vertical. E
 	height:50px;
 	margin:auto;
 }
-</style>
 <div class="pai">
 	<div class="filho">filho</div>
 </div>
@@ -51,8 +49,7 @@ O único contra dessa solução é que não funciona no IE8 e anteriores (seria 
 
 Segue o código final:
 <pre lang="html">
-<code>
-<style>
+<code class="language-css">
 .pai {
 	background-color:red;
 	height:200px;
@@ -71,7 +68,7 @@ Segue o código final:
 	-o-transform: translateY(-50%);
     transform: translateY(-50%);
 }
-</style>
+
 <div class="pai">
 	<div class="filho"></div>
 </div>

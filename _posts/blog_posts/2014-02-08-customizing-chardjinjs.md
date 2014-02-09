@@ -16,8 +16,8 @@ I'm gonna use this arrow in that example:
 Chardin.js uses pseudo-elements to create these lines that are used in their instructions. So what we have to do is change them in chardinjs.css file. In `content` a dot is used to turn into a line, so we have to remove along `background-color` and instead we will add `background-image`.
 
 <pre lang="html">
-<code>
-Change this
+<code class="language-css">
+# Change this
 
   .chardinjs-tooltip.chardinjs-right:before, [...] {
     content: ".";
@@ -27,7 +27,7 @@ Change this
     overflow: hidden;
     position: absolute; }
 
-to
+# to
 
 .chardinjs-tooltip.chardinjs-right:before, [...] {
     content: "";
@@ -42,7 +42,7 @@ to
 Next we gonna add `width` and `height` to show the arrow, and then move its position a little higher to the top.
 
 <pre lang="html">
-<code>
+<code class="language-css">
   .chardinjs-tooltip.chardinjs-top:after {
     width: 11px;
     height: 30px;

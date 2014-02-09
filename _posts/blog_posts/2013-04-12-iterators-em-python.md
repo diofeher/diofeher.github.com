@@ -13,7 +13,7 @@ Iterables
 
 O primeiro passo para se entender o yield é entender o que são iterables. Um objeto é iterable quando você pode percorrer seus valores usando um “for valor in objeto”.
 
-<pre lang="python"><code>
+<pre lang="python"><code class="language-python">
 >>> lista = ['d', 'i', 'o', 'f', 'e', 'h', 'e', 'r']
 >>> for letra in lista:
 ...   print letra
@@ -30,13 +30,13 @@ r
 
 Outra maneira de criar iterables é usando list comprehension:
 
-<pre lang="python"><code>
+<pre lang="python"><code class="language-python">
 lista = [letra for letra in "diofeher"]
 </code></pre>
 
 Geralmente para ser iterable, o objeto precisa ter implementado o método __iter__. Uma regra a essa exceção é a string, que não tem esse método mágico, mas que pode iterada usando seu __getitem__. Uma boa maneira de saber se um objeto é iterável ou não:
 
-<pre lang="python"><code>
+<pre lang="python"><code class="language-python">
 >>> iter([1,2,3])
 <listiterator object at 0x1004cdc50>
 >>> iter('diofeher')
@@ -64,7 +64,7 @@ Generators
 
 Generators são iterables, a diferença é que seus valores são lidos apenas quando é necessário. Pode-se dizer que iterables normais tem eager evalution e generators tem lazy evalution.
 
-<pre lang="python"><code>
+<pre lang="python"><code class="language-python">
 >>> gerador = (letra for letra in "diofeher")
 >>> gerador.next()
 'd'
@@ -94,7 +94,7 @@ Yield
 
 Yield funciona mais ou menos como um return, com a diferença que ele retorna um generator.
 
-<pre lang="python"><code>
+<pre lang="python"><code class="language-python">
 >>> def gerador():
 ...   for i in range(10):
 ...     yield i * 2
@@ -123,7 +123,7 @@ Entendendo como funciona por debaixo dos panos (a parte difícil):
 Quando você usa a função desse jeito, o código da função não é rodado; O que é retornado é o objeto generator, para o código ser executado somente quando você chama next() ou usa um for no objeto.
 Na primeira vez que a sua função for rodada, ela vai rodar do começo e parar até tocar no primeiro yield. Após tocar no primeiro yield, ela vai continuar do ponto que foi parado até achar o próximo yield. Quando não for achado um yield, a exceção StopIteration é lançada. Essa explicação fica melhor vista na função abaixo:
 
-<pre lang="python"><code>
+<pre lang="python"><code class="language-python">
 >>> def test():
 ...   yield 1
 ...   for i in range(3):
