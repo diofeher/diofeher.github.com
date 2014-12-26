@@ -51,3 +51,6 @@ Como você se sentiria sem nunca ter provado o que é liberdade?
 <h2>Inimigos</h2>
 <h3>Urubu</h3>
 <h3>Cientista</h3>
+
+<h2>Gráficos</h2>
+<p>Os gráficos poderão ser inspirados em Limbo, Children of Morta ou Lunar Ray</p>
