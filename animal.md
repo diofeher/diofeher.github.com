@@ -3,6 +3,8 @@ layout: default
 permalink: /animal/
 title: animal
 ---
+<meta name="robots" content="nofollow" />
+
 <h2>História</h2>
 Como você se sentiria sem nunca ter provado o que é liberdade?
 <p>A história começa com Ralph tentando fugir do laboratório onde fazem testes cerebrais nele. Ali ele vê sua amada mas não consegue salvá-la.</p>
