@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 jekyll_blog
 ===========
 
@@ -14,4 +13,3 @@ Compile css
 -----------
 
 sass --watch style.scss:style.css
->>>>>>> gh-pages
