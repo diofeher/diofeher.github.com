@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=Edge,chrome=1">
+    <script type="text/javascript">
+        window.NREUM || (NREUM = {}), __nr_require = function (e, n, t) {
+            function r(t) {
+                if (!n[t]) {
+                    var o = n[t] = {
+                        exports: {}
+                    };
+                    e[t][0].call(o.exports, function (n) {
+                        var o = e[t][1][n];
+                        return r(o || n)
+                    }, o, o.exports)
+                }
+                return n[t].exports
+            }
+            if ("function" == typeof __nr_require) return __nr_require;
+            for (var o = 0; o < t.length; o++) r(t[o]);
+            return r
+        }({
+            1: [function (e, n, t) {
+                function r() {}
+
+                function o(e, n, t) {
+                    return function () {
+                        return i(e, [c.now()].concat(u(arguments)), n ? null : this, t), n ? void 0 :
+                            this
+                    }
+                }
+                var i = e("handle"),
+                    a = e(3),
+                    u = e(4),
+                    f = e("ee").get("tracer"),
+                    c = e("loader"),
+                    s = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = s);
+                var p = ["setPageViewName", "setCustomAttribute", "setErrorHandler", "finished",
+                        "addToTrace", "inlineHit", "addRelease"
+                    ],
+                    d = "api-",
+                    l = d + "ixn-";
+                a(p, function (e, n) {
+                    s[n] = o(d + n, !0, "api")
+                }), s.addPageAction = o(d + "addPageAction", !0), s.setCurrentRouteName = o(d +
+                    "routeName", !0), n.exports = newrelic, s.interaction = function () {
+                    return (new r).get()
+                };
+                var m = r.prototype = {
+                    createTracer: function (e, n) {
+                        var t = {},
+                            r = this,
+                            o = "function" == typeof n;
+                        return i(l + "tracer", [c.now(), e, t], r),
+                            function () {
+                                if (f.emit((o ? "" : "no-") + "fn-start", [c.now(), r, o], t),
+                                    o) try {
+                                    return n.apply(this, arguments)
+                                } catch (e) {
+                                    throw f.emit("fn-err", [arguments, this, e], t), e
+                                } finally {
+                                    f.emit("fn-end", [c.now()], t)
+                                }
+                            }
+                    }
+                };
+                a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),
+                    function (e, n) {
+                        m[n] = o(l + n)
+                    }), newrelic.noticeError = function (e, n) {
+                    "string" == typeof e && (e = new Error(e)), i("err", [e, c.now(), !1, n])
+                }
+            }, {}],
+            2: [function (e, n, t) {
+                function r(e, n) {
+                    if (!o) return !1;
+                    if (e !== o) return !1;
+                    if (!n) return !0;
+                    if (!i) return !1;
+                    for (var t = i.split("."), r = n.split("."), a = 0; a < r.length; a++)
+                        if (r[a] !== t[a]) return !1;
+                    return !0
+                }
+                var o = null,
+                    i = null,
+                    a = /Version\/(\S+)\s+Safari/;
+                if (navigator.userAgent) {
+                    var u = navigator.userAgent,
+                        f = u.match(a);
+                    f && u.indexOf("Chrome") === -1 && u.indexOf("Chromium") === -1 && (o = "Safari", i =
+                        f[1])
+                }
+                n.exports = {
+                    agent: o,
+                    version: i,
+                    match: r
+                }
+            }, {}],
+            3: [function (e, n, t) {
+                function r(e, n) {
+                    var t = [],
+                        r = "",
+                        i = 0;
+                    for (r in e) o.call(e, r) && (t[i] = n(r, e[r]), i += 1);
+                    return t
+                }
+                var o = Object.prototype.hasOwnProperty;
+                n.exports = r
+            }, {}],
+            4: [function (e, n, t) {
+                function r(e, n, t) {
+                    n || (n = 0), "undefined" == typeof t && (t = e ? e.length : 0);
+                    for (var r = -1, o = t - n || 0, i = Array(o < 0 ? 0 : o); ++r < o;) i[r] = e[n + r];
+                    return i
+                }
+                n.exports = r
+            }, {}],
+            5: [function (e, n, t) {
+                n.exports = {
+                    exists: "undefined" != typeof window.performance && window.performance.timing &&
+                        "undefined" != typeof window.performance.timing.navigationStart
+                }
+            }, {}],
+            ee: [function (e, n, t) {
+                function r() {}
+
+                function o(e) {
+                    function n(e) {
+                        return e && e instanceof r ? e : e ? f(e, u, i) : i()
+                    }
+
+                    function t(t, r, o, i) {
+                        if (!d.aborted || i) {
+                            e && e(t, r, o);
+                            for (var a = n(o), u = v(t), f = u.length, c = 0; c < f; c++) u[c].apply(a,
+                                r);
+                            var p = s[y[t]];
+                            return p && p.push([b, t, r, a]), a
+                        }
+                    }
+
+                    function l(e, n) {
+                        h[e] = v(e).concat(n)
+                    }
+
+                    function m(e, n) {
+                        var t = h[e];
+                        if (t)
+                            for (var r = 0; r < t.length; r++) t[r] === n && t.splice(r, 1)
+                    }
+
+                    function v(e) {
+                        return h[e] || []
+                    }
+
+                    function g(e) {
+                        return p[e] = p[e] || o(t)
+                    }
+
+                    function w(e, n) {
+                        c(e, function (e, t) {
+                            n = n || "feature", y[t] = n, n in s || (s[n] = [])
+                        })
+                    }
+                    var h = {},
+                        y = {},
+                        b = {
+                            on: l,
+                            addEventListener: l,
+                            removeEventListener: m,
+                            emit: t,
+                            get: g,
+                            listeners: v,
+                            context: n,
+                            buffer: w,
+                            abort: a,
+                            aborted: !1
+                        };
+                    return b
+                }
+
+                function i() {
+                    return new r
+                }
+
+                function a() {
+                    (s.api || s.feature) && (d.aborted = !0, s = d.backlog = {})
+                }
+                var u = "nr@context",
+                    f = e("gos"),
+                    c = e(3),
+                    s = {},
+                    p = {},
+                    d = n.exports = o();
+                d.backlog = s
+            }, {}],
+            gos: [function (e, n, t) {
+                function r(e, n, t) {
+                    if (o.call(e, n)) return e[n];
+                    var r = t();
+                    if (Object.defineProperty && Object.keys) try {
+                        return Object.defineProperty(e, n, {
+                            value: r,
+                            writable: !0,
+                            enumerable: !1
+                        }), r
+                    } catch (i) {}
+                    return e[n] = r, r
+                }
+                var o = Object.prototype.hasOwnProperty;
+                n.exports = r
+            }, {}],
+            handle: [function (e, n, t) {
+                function r(e, n, t, r) {
+                    o.buffer([e], r), o.emit(e, n, t)
+                }
+                var o = e("ee").get("handle");
+                n.exports = r, r.ee = o
+            }, {}],
+            id: [function (e, n, t) {
+                function r(e) {
+                    var n = typeof e;
+                    return !e || "object" !== n && "function" !== n ? -1 : e === window ? 0 : a(e, i,
+                        function () {
+                            return o++
+                        })
+                }
+                var o = 1,
+                    i = "nr@id",
+                    a = e("gos");
+                n.exports = r
+            }, {}],
+            loader: [function (e, n, t) {
+                function r() {
+                    if (!E++) {
+                        var e = x.info = NREUM.info,
+                            n = l.getElementsByTagName("script")[0];
+                        if (setTimeout(s.abort, 3e4), !(e && e.licenseKey && e.applicationID && n))
+                            return s.abort();
+                        c(y, function (n, t) {
+                            e[n] || (e[n] = t)
+                        }), f("mark", ["onload", a() + x.offset], null, "api");
+                        var t = l.createElement("script");
+                        t.src = "https://" + e.agent, n.parentNode.insertBefore(t, n)
+                    }
+                }
+
+                function o() {
+                    "complete" === l.readyState && i()
+                }
+
+                function i() {
+                    f("mark", ["domContent", a() + x.offset], null, "api")
+                }
+
+                function a() {
+                    return O.exists && performance.now ? Math.round(performance.now()) : (u = Math.max(
+                        (new Date).getTime(), u)) - x.offset
+                }
+                var u = (new Date).getTime(),
+                    f = e("handle"),
+                    c = e(3),
+                    s = e("ee"),
+                    p = e(2),
+                    d = window,
+                    l = d.document,
+                    m = "addEventListener",
+                    v = "attachEvent",
+                    g = d.XMLHttpRequest,
+                    w = g && g.prototype;
+                NREUM.o = {
+                    ST: setTimeout,
+                    SI: d.setImmediate,
+                    CT: clearTimeout,
+                    XHR: g,
+                    REQ: d.Request,
+                    EV: d.Event,
+                    PR: d.Promise,
+                    MO: d.MutationObserver
+                };
+                var h = "" + location,
+                    y = {
+                        beacon: "bam.nr-data.net",
+                        errorBeacon: "bam.nr-data.net",
+                        agent: "js-agent.newrelic.com/nr-1118.min.js"
+                    },
+                    b = g && w && w[m] && !/CriOS/.test(navigator.userAgent),
+                    x = n.exports = {
+                        offset: u,
+                        now: a,
+                        origin: h,
+                        features: {},
+                        xhrWrappable: b,
+                        userAgent: p
+                    };
+                e(1), l[m] ? (l[m]("DOMContentLoaded", i, !1), d[m]("load", r, !1)) : (l[v](
+                    "onreadystatechange", o), d[v]("onload", r)), f("mark", ["firstbyte", u], null,
+                    "api");
+                var E = 0,
+                    O = e(5)
+            }, {}]
+        }, {}, ["loader"]);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="python, javascript, ruby, php, html, css, golang, java, rest api">
+    <meta name="description" content="Hire Diogenes Full Stack Web and Mobile Developer with 9+ years of industry experience working with startups in Europe and the USA to curate cutting-edge software solutions/applications using Python, Ruby, Javascript, GoLang, PHP and Java. I employ the best practices for software development in the delivery of high-quality solutions for clients.
+, Python, JavaScript, Ruby, PHP, HTML, CSS, GoLang, Java, Rest API">
+    <title>Hire Diogenes A. | Python, JavaScript,
+        Ruby, PHP, HTML, CSS, GoLang, Java, Rest API</title>
+    <meta property="og:image" content="https://d2b4hdprenmpvc.cloudfront.net/292c37e15ff41ce95182161cfbdae206.jpeg">
+
+    <link href="/assets/css/resume.min.css" rel="stylesheet" type="text/css">
+    <link href="https://vjs.zencdn.net/7.1.0/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i" rel="stylesheet">
+    <style>
+        body.profile-page .profile-details figure {
+            flex: 1 0 200px !important;
+            max-width: 200px !important;
+        }
+        .video-js .vjs-big-play-button {
+            top: 41% !important;
+            left: 41% !important;
+        }
+    </style>
+</head>
+
+<body ng-app="alttab" class="profile-page">
+    <div class="overlayer"></div>
+    <div>
+        <header>
+            <figure style="background-image:url('/assets/images/cover.jpg')"></figure>
+        </header>
+        <div class="main container">
+            <div class="profile-details">
+                <figure style="background-image:url('https://d2b4hdprenmpvc.cloudfront.net/292c37e15ff41ce95182161cfbdae206.jpeg')"></figure>
+                <div>
+                    <h1>Diogenes A.</h1>
+                    <h3>Senior Software Engineer</h3>
+                    <ul>
+                        <li><span>Python</span><b>9</b></li>
+                        <li><span>JavaScript</span><b>9</b></li>
+                        <li><span>GoLang</span><b>3</b></li>
+                        <li><span>Ruby</span><b>3</b></li>
+                        <li><span>Kubernetes</span><b>1</b></li>
+                        <li><span>Docker</span><b>1</b></li>
+                        <li><span>PHP</span><b>1</b></li>
+                        <li><span>HTML</span><b>9</b></li>
+                        <li><span>CSS</span><b>9</b></li>
+                    </ul>
+                </div>
+            </div>
+            <h2>About</h2>
+            <article>
+                <ul>
+                    <li>
+                        <label>Location</label><span>João Pessoa, Brazil</span>
+                    </li>
+
+
+                    <li>
+                        <label>What I do</label><span>I am a Full Stack Web and Mobile Developer with 9+ years of
+                            industry experience working with startups in Europe and the USA to curate cutting-edge
+                            software solutions/applications using Python, Ruby, Javascript, GoLang, PHP and Java. I
+                            employ the best practices for software development in the delivery of high-quality
+                            solutions for clients.
+                        </span>
+                    </li>
+                </ul>
+            </article>
+            <h2>Experience</h2>
+            <article>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://fireshellsecurity.team/assets/images/favicon.ico)"></figure>
+                        <div>
+                            <label><a href="http://expertlead.de" target="_blank">FireShell Security Team</a></label>
+                            <b>InfoSec / CTF Player<small>Fev 2018 - Present </small></b>
+                            <span><i class="icon-location-pin"></i>Remote (Brazil)</span> <span><i class="icon-price-tag"></i><span>Security Research, CTFs,Championships</span></span>
+                        </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>CTF Team focused on learning security and playing championships.</p>
+                        <p>CTFTime 2019's current position: 7th</p>
+                        <p>CTFTime 2018's position: 60th</p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>Web exploitation, </b>
+                        <b>Programming, </b>
+                        <b>Pwn, </b>
+                        <b>Reversing, </b>
+                        <b>Infrastructure, </b>
+                        <b>Security, </b>
+                        <b>Hardware Security</b>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://logo.clearbit.com/http:/expertlead.de)"></figure>
+                        <div>
+                            <label><a href="http://expertlead.de" target="_blank">expertlead</a></label>
+                            <b>Senior Software Engineer<small>Jan 2019 - Present </small></b>
+                            <span><i class="icon-location-pin"></i>Remote (Berlin, Germany)</span> <span><i class="icon-price-tag"></i><span>Core
+                                    Developer, Performance Improvement, Full-Stack Engineering, Security, Operations</span></span>
+                        </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>Creating and developing innovative software solutions for clients across a broad range of
+                            industries.</p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>JavaScript, </b>
+                        <b>Python, </b>
+                        <b>GoLang, </b>
+                        <b>HTML, </b>
+                        <b>CSS, </b>
+                        <b>Kubernetes, </b>
+                        <b>Docker</b>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://logo.clearbit.com/http://channelh.com)"></figure>
+                        <div>
+                            <label><a href="http://channelh.com" target="_blank">Channel(H)</a></label>
+                            <b>Lead Engineer<small>April 2016 - April 2018 (2 years)</small></b>
+                            <span><i class="icon-location-pin"></i>Boston, USA</span> <span><i class="icon-price-tag"></i><span>Lead
+                                    Developer, Performance Improvement, Technical Lead</span></span> </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>Successfully hired and managed five developers to build, deploy and maintain the
+                            application.</p>
+                        <p>Offered technical expertise and consultancy to the company to grow its client base and
+                            revenue by 500% through meetings with clients and the completion of technical products.</p>
+                        <p>Efficiently architected the major components of the application, like the billing system,
+                            healthcare data connectors and the business intelligence app. </p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>Ruby, </b>
+                        <b>Ruby on Rails, </b>
+                        <b>JavaScript, </b>
+                        <b>Sidekiq, </b>
+                        <b>API</b>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://d2b4hdprenmpvc.cloudfront.net/dc29f946f2e2da592fbabf6bf9be707b.png)"></figure>
+                        <div>
+                            <label><a href="http://streetbarz.com" target="_blank">StreetBarz</a></label>
+                            <b>Founder<small>2014 - 2016 (1 year)</small></b>
+                            <span><i class="icon-location-pin"></i>Joao Pessoa, Brazil</span> <span><i class="icon-price-tag"></i><span>Key
+                                    Developer, Performance Improvement, Technical Support</span></span> </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>Managed a team of two developers in delivering two working apps for Android and iOS.</p>
+                        <p>Handled all communications with users, community and managed social media interactions,
+                            growing to 60k users, 10k on Instagram and 3k on facebook.</p>
+                        <p>Provided technical leadership and direction for the development of the technical backend and
+                            apps on Android/iOS, using native technologies.</p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>Django, </b>
+                        <b>Android, </b>
+                        <b>Objective C, </b>
+                        <b>API</b>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://d2b4hdprenmpvc.cloudfront.net/e184f88ce6b30acabd472a80f5d0f561.png)"></figure>
+                        <div>
+                            <label><a href="http://crowdspring.com" target="_blank">crowdSPRING</a></label>
+                            <b>Full Stack Developer<small>2012 - 2015 (2 years)</small></b>
+                            <span><i class="icon-location-pin"></i>Chicago, USA</span> <span><i class="icon-price-tag"></i><span>Key
+                                    Developer, Performance Improvement, Technical Support</span></span> </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>Successfully refactored the client's payment system; decreasing bugs by 90% and implemented
+                            an alert system to warn of from other services.</p>
+                        <p>Built the frontend of the new front page, which increased user conversion on new accounts by
+                            50%.</p>
+                        <p>Efficient wrote and executed a lot of end-to-end tests, to cover user interactions from 0%
+                            to 50% of the app.</p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>Python, </b>
+                        <b>Django, </b>
+                        <b>JavaScript, </b>
+                        <b>HTML, </b>
+                        <b>CSS</b>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://d2b4hdprenmpvc.cloudfront.net/3dfbcc4ed741b2b5ec440ec6128f3c39.png)"></figure>
+                        <div>
+                            <label>Zed Media B.V</label>
+                            <b>Developer<small>2012 - 2012 (3 months)</small></b>
+                            <span><i class="icon-location-pin"></i>Amsterdam, Netherland</span> <span><i class="icon-price-tag"></i><span>Key
+                                    Developer, Performance Improvement</span></span> </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>Efficiently scrapped the contents of old websites for Zed Media.</p>
+                        <p>Offered guidance and direction for the creation of new content on websites for the company.</p>
+                        <p>Fixed bugs, resolved complex issues and utilized best practices on all tasks.</p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>JavaScript, </b>
+                        <b>Python, </b>
+                        <b>HTML, </b>
+                        <b>CSS</b>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://d2b4hdprenmpvc.cloudfront.net/43ccc5eccee0c6af226b333b29861b27.png)"></figure>
+                        <div>
+                            <label><a href="http://mapthatpad.com" target="_blank">MapThatPad</a></label>
+                            <b>Software Developer<small>2011 - 2011 (6 months)</small></b>
+                            <span><i class="icon-price-tag"></i><span>Key Developer, Performance Improvement, Technical
+                                    Support</span></span> </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>Actively participated in the design, development and implementation of MapThatPad's web
+                            application.</p>
+                        <p>Provided expert support for complex and advanced technical issues after implementation of
+                            the application for the client.</p>
+                        <p>Implemented software best practices on the project for the company.</p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>Django, </b>
+                        <b>JavaScript</b>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://d2b4hdprenmpvc.cloudfront.net/5ec0164ff040663c602c2c8f5ee19135.png)"></figure>
+                        <div>
+                            <label><a href="http://smartnutstechnology.com" target="_blank">Smart Nuts Technology</a></label>
+                            <b>Developer<small>2010 - 2011 (4 months)</small></b>
+                            <span><i class="icon-price-tag"></i><span>Key Developer, Performance Improvement, Technical
+                                    Support</span></span> </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>Efficiently developed, enhanced, modified and maintained web applications for Smart Nuts
+                            Technology.</p>
+                        <p>Debugged websites and web applications.</p>
+                        <p>Offered guidance for process improvements on web applications.</p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>Django, </b>
+                        <b>jQuery</b>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://d2b4hdprenmpvc.cloudfront.net/51e77d0a3ddad6c3d9357f56bf2ceb47.png)"></figure>
+                        <div>
+                            <label><a href="http://artecine.com.br" target="_blank">Zocka Internet</a></label>
+                            <b>Developer<small>2010 - 2010 (4 months)</small></b>
+                            <span><i class="icon-location-pin"></i>Brazil</span> <span><i class="icon-price-tag"></i><span>Key
+                                    Developer, Performance Improvement, Technical Support</span></span> </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>Designed, developed, and improved websites for Zocka Internet using engineering best
+                            practices.</p>
+                        <p>Provided actionable solutions to quality issues identified on web applications for clients.</p>
+                        <p>Fixed software bugs and enhanced applications for optimal performance.</p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>MySQL, </b>
+                        <b>SQLite, </b>
+                        <b>XHTML, </b>
+                        <b>JavaScript, </b>
+                        <b>CSS, </b>
+                        <b>Python, </b>
+                        <b>Django, </b>
+                        <b>Gdata, </b>
+                        <b>Django CMS</b>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://d2b4hdprenmpvc.cloudfront.net/427b22d8ec43668442ef884f0f163878.jpeg)"></figure>
+                        <div>
+                            <label><a href="http://behance.net/sodavirtual" target="_blank">Soda Virtual</a></label>
+                            <b>Developer<small>2009 - 2010 (6 months)</small></b>
+                            <span><i class="icon-location-pin"></i>Brazil</span> <span><i class="icon-price-tag"></i><span>Key
+                                    Developer, Performance Improvement, Technical Support</span></span> </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>Offered technical direction and guidance for the development of different websites and
+                            systems for clients.</p>
+                        <p>Provided support to clients by triaging bugs, responding to feedback, and fixing production
+                            issues.</p>
+                        <p>Regularly implemented and maintained services that powered new features on projects for
+                            clients of Soda Virtual.</p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>MySQL, </b>
+                        <b>SQLite, </b>
+                        <b>XHTML, </b>
+                        <b>CSS, </b>
+                        <b>JavaScript, </b>
+                        <b>Python, </b>
+                        <b>Django</b>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="company">
+                        <figure style="background-image: url(https://d2b4hdprenmpvc.cloudfront.net/e06e0d56ff4627adbd85d0e24f6785e2.png)"></figure>
+                        <div>
+                            <label><a href="http://ifpb.edu.br/" target="_blank">CMSI IFPB</a></label>
+                            <b>Technical Support<small>2009 - 2009 (29 days)</small></b>
+                            <span><i class="icon-location-pin"></i>Brazil</span> <span><i class="icon-price-tag"></i><span>Developer,
+                                    Performance Improvement, Technical Support</span></span> </div>
+                    </div>
+
+                    <div class="workflow">
+                        <p>Offered guidance and support for the installation and maintenance of OS and software.</p>
+                        <p>Investigated and resolved complex software issues.</p>
+                        <p>Identified and upheld engineering best practices on all tasks.</p>
+                    </div>
+
+                    <div class="skills">
+                        <span>Skills: </span>
+                        <b>JavaScript, </b>
+                        <b>Python, </b>
+                        <b>HTML, </b>
+                        <b>CSS</b>
+                    </div>
+                </div>
+            </article>
+            <h2>Showcase</h2>
+            <article>
+                <div class="job showcase">
+                    <div class="company">
+                        <figure style="background-image: url('https://d2b4hdprenmpvc.cloudfront.net/4de9035564d59d9a58155d3df207dd1a.jpeg')"></figure>
+                        <div>
+                            <b><a href="http:// http://www.diofeher.net/spacedrum/" target="_blank">Builder - Spacedrum</a></b>
+                            <span>The application helps users learn how to play the steeldrum. Built the components of
+                                the project to present sound on an Audio API from HTML5.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="job showcase">
+                    <div class="company">
+                        <figure style="background-image: url('https://d2b4hdprenmpvc.cloudfront.net/75ec1dbecea5063a5210ed93e951a907.png')"></figure>
+                        <div>
+                            <b><a href="https://www.youtube.com/channel/UCOCOSHBTtaFEJYzlYjo8Zlw?view_as=subscriber"
+                                    target="_blank">Content Creator - Youtube Channel</a></b>
+                            <span>Regularly create content to show how to solve Capture-The-Flag challenges and also
+                                teach subscribers how to program (in progress).</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="job showcase">
+                    <div class="company">
+                        <figure style="background-image: url('https://d2b4hdprenmpvc.cloudfront.net/d40d7d28ec0953201d1b6d60ec8ca9e6.png')"></figure>
+                        <div>
+                            <b><a href="http:// https://github.com/diofeher/pizza_project" target="_blank">Software
+                                    Engineer - Pizza Project</a></b>
+                            <span>This is an ongoing project that seeks to teach students in university how to build
+                                web applications using the latest software development technologies.</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <h2>Education</h2>
+            <article>
+                <div class="job education">
+                    <div class="company">
+                        <figure style="background-image: url('')"></figure>
+                        <div>
+                            <label>UNICIV</label><b>Specialization in Ethical Hacking and CyberSecurity<small>2019 -
+                                    current</small></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="job education">
+                    <div class="company">
+                        <figure style="background-image: url('')"></figure>
+                        <div>
+                            <label>Estácio de Sá</label><b>Specialization in Mobile and Embedded Devices<small>2011 -
+                                    2012</small></b>
+                        </div>
+                    </div>
+                </div>
+                <div class="job education">
+                    <div class="company">
+                        <figure style="background-image: url('')"></figure>
+                        <div>
+                            <label>Instituto Federal de Educação, Ciência e Tecnologia</label><b>Technology in Internet
+                                Systems<small>2008 - 2010</small></b>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@2.4.2/dist/vue.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript"></script>
+    <!--script(type="text/javascript", src="https://s3-us-west-2.amazonaws.com/upstack-assets/js/all.min.js")-->
+    <script type="text/javascript" src="/assets/js/resume.min.js"></script>
+    <script src="https://vjs.zencdn.net/7.1.0/video.js"></script>
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-79441502-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- Hotjar Tracking Code for www.upstack.co-->
+    <script type="text/javascript">
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () {
+                (h.hj.q = h.hj.q || []).push(arguments)
+            };
+            h._hjSettings = {
+                hjid: 589582,
+                hjsv: 5
+            };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script');
+            r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    <script>
+        $(function () {
+
+        }).on('click', '#more-skills', function () {
+            $('#more-skills').hide();
+            $('#less-skills').show();
+            $('.more-skills').show();
+        }).on('click', '#less-skills', function () {
+            $('#more-skills').show();
+            $('#less-skills').hide();
+            $('.more-skills').hide();
+        })
+    </script>
+</body>
+
+</html>
