@@ -1,0 +1,113 @@
+---
+# this is an empty front matter
+---
+<html>
+  <head>
+    <title>Fora Gizelly</title>
+  </head>
+
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css">
+  <style>
+    .name {
+      padding: 0 20px;
+    }
+    ul {
+      display: inline;
+    }
+    li {
+      margin-top: 5px;
+      list-style-type: none;
+      display: inline;
+    }
+
+    iframe {
+        display: inline;
+    }
+
+    #modal {
+        /* some styles to position the modal at the center of the page */
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        width: 50vw;
+        margin-left: -25vw;
+        height: 200px;
+        margin-top: -100px;
+        background-color: #ccc;
+        text-align: center;
+        border-radius: 5px;
+
+        /* needed styles for the overlay */
+        z-index: 999; /* keep on top of other elements on the page */
+        box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+    }
+  </style>
+  <body>
+    <div id="modal">
+      <h1>Ajuda o dev! :)</h1>
+      <p>Após clicar em um dos botões, você pode acessar o site</p>
+      <a href="https://twitter.com/diofeher?ref_src=twsrc%5Etfw" class="twitter-follow-button follow-button" data-show-count="false">Follow @diofeher</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+      <div id="youtube-button"></div>
+    </div>
+
+    <div>
+      <a class="name" href="diofeher.net">diofeher</a> |
+      <ul class="social">
+        <li><a href="https://github.com/diofeher" class="ss-icon">octocat</a></li>
+        <li><a href="https://twitter.com/diofeher" class="ss-icon">twitter</a></li>
+        <li><a href="https://youtube.com/channel/UCOCOSHBTtaFEJYzlYjo8Zlw" class="ss-icon">youtube</a></li>
+
+      </ul>
+    </div>
+    {% for i in (1..6) %}
+        <iframe name="iframe{{ i }}" scrolling="no" width="300" height="300" src="https://gshow.globo.com/realities/bbb/bbb20/votacao/paredao-bbb20-quem-voce-quer-eliminar-babu-gizelly-ou-mari-6b0c783d-65cd-4a4e-940c-ad086cf73fee.ghtml" ></iframe>
+    {% endfor %}
+  </body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script src="https://apis.google.com/js/platform.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-13230251-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-13230251-1');
+  </script>
+  <script>
+    TIMEOUT_TIME = 1000;
+    removeFunc = () => {
+      document.getElementById('modal').remove()
+      document.cookie = "subscribed=true";
+    }
+
+    function renderYtSubscribeButton(channel) {
+      var container = document.getElementById('youtube-button');
+      var options = {
+        channelId: channel
+      };
+
+      gapi.ytsubscribe.render(container, options);
+    }
+
+    if(document.cookie.includes('subscribed=true')) {
+      removeFunc();
+    }
+
+    const intervalId = setInterval(() => {
+      if(twttr) {
+        twttr.events.bind('click', function (ev) {
+          setTimeout(removeFunc, TIMEOUT_TIME);
+        });
+        clearInterval(intervalId);
+      }
+    }, TIMEOUT_TIME);
+
+    const intervalYTId = setInterval(() => {
+      if(gapi) {
+        renderYtSubscribeButton('UCOCOSHBTtaFEJYzlYjo8Zlw');
+        clearInterval(intervalYTId);
+      }
+    }, TIMEOUT_TIME);
+  </script>
+</html>
