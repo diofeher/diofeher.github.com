@@ -24,6 +24,8 @@
         display: inline;
     }
 
+
+
     #modal {
         /* some styles to position the modal at the center of the page */
         position: absolute;
@@ -41,6 +43,23 @@
         z-index: 999; /* keep on top of other elements on the page */
         box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
     }
+
+    @media screen and (max-width: 420px) {
+      body {
+         font-size: 2em;
+      }
+
+      #modal {
+        width: 39vw;
+        margin-left: -25vw;
+        height: 300px;
+        width: 200px;
+      }
+
+      #modal p {
+        font-size: 0.5em;
+      }
+   }
   </style>
   <body>
     <div id="modal">
@@ -48,7 +67,8 @@
       <p>Após clicar em um dos botões, você pode acessar o site</p>
       <a href="https://twitter.com/diofeher?ref_src=twsrc%5Etfw" class="twitter-follow-button follow-button" data-show-count="false">Follow @diofeher</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-      <div id="youtube-button"></div>
+      <script src="https://apis.google.com/js/platform.js"></script>
+      <div class="g-ytsubscribe" data-channelid="UCOCOSHBTtaFEJYzlYjo8Zlw" data-layout="default" data-count="default"></div>
     </div>
 
     <div>
@@ -57,8 +77,8 @@
         <li><a href="https://github.com/diofeher" class="ss-icon">octocat</a></li>
         <li><a href="https://twitter.com/diofeher" class="ss-icon">twitter</a></li>
         <li><a href="https://youtube.com/channel/UCOCOSHBTtaFEJYzlYjo8Zlw" class="ss-icon">youtube</a></li>
-
       </ul>
+      <a style="margin-left: 25px;">Votos: <strong id="votes">0</strong></a>
     </div>
     {% for i in (1..6) %}
         <iframe name="iframe{{ i }}" scrolling="no" width="300" height="300" src="https://gshow.globo.com/realities/bbb/bbb20/votacao/paredao-bbb20-quem-voce-quer-eliminar-babu-gizelly-ou-mari-6b0c783d-65cd-4a4e-940c-ad086cf73fee.ghtml" ></iframe>
@@ -76,18 +96,11 @@
   </script>
   <script>
     TIMEOUT_TIME = 1000;
+    youtubeFrame = null;
+
     removeFunc = () => {
       document.getElementById('modal').remove()
       document.cookie = "subscribed=true";
-    }
-
-    function renderYtSubscribeButton(channel) {
-      var container = document.getElementById('youtube-button');
-      var options = {
-        channelId: channel
-      };
-
-      gapi.ytsubscribe.render(container, options);
     }
 
     if(document.cookie.includes('subscribed=true')) {
@@ -103,11 +116,11 @@
       }
     }, TIMEOUT_TIME);
 
-    const intervalYTId = setInterval(() => {
-      if(gapi) {
-        renderYtSubscribeButton('UCOCOSHBTtaFEJYzlYjo8Zlw');
-        clearInterval(intervalYTId);
+    window.addEventListener('blur', function () {
+      const youtubeFrame = document.querySelector('iframe[data-gapiattached="true"]')
+      if (document.activeElement == youtubeFrame) {
+        removeFunc();
       }
-    }, TIMEOUT_TIME);
+    });
   </script>
 </html>
