@@ -40,6 +40,12 @@ body {
   padding-top:200px;
 }
 
+.titulo2 {
+  width: 160px;
+  display: block;
+  padding-top: 100px;
+}
+
 #btn-jogar {
   width:160px;
   display:block;
@@ -57,6 +63,7 @@ body {
 #btn-garrafa {
   cursor: pointer;
   display:block;
+  width: 80px;
 }
 
 .btn-menu {
