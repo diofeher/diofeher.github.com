@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Livvic-Light';
+  src: url('Livvic-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+.fundo {
+  background-repeat: no-repeat; 
+  height: 100%;
+  background-size: auto 100%;
+  max-width: 432px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#screen-principal {
+  background-image: url(fundo.png);
+}
+
+#screen-instrucoes {
+  background-image: url(screen-instrucoes.png);
+  display:none;
+}
+
+#screen-jogo {
+  background-image: url(fundo.png);
+  display:none;
+}
+
+.titulo {
+  width:250px;
+  display:block;
+  padding-top:200px;
+}
+
+#btn-jogar {
+  width:160px;
+  display:block;
+  padding-top: 5%;
+  cursor: pointer;
+}
+
+#btn-instrucoes {
+  width:210px;
+  display:block;
+  padding: 0 0 0 1%;
+  cursor: pointer;
+}
+
+#btn-garrafa {
+  cursor: pointer;
+  display:block;
+}
+
+.btn-menu {
+  width:100px;
+  position:absolute;
+  left: 35px;
+  top: 35px;
+  cursor: pointer;
+}
+
+#div-display {
+  width: 100%;
+}
+
+#display-txt {
+  font-size:1.25em;
+  color: white;
+  padding: 10px 0;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
