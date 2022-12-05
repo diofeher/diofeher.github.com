@@ -34,26 +34,26 @@ body {
 }
 
 .titulo {
-  width:250px;
+  width:58vw;
   display:block;
-  padding-top:200px;
+  padding-top:20vh;
 }
 
 .titulo2 {
-  width: 160px;
+  width:25vw;
   display: block;
   padding-top: 100px;
 }
 
 #btn-jogar {
-  width:160px;
+  width:48vw;
   display:block;
   padding-top: 5%;
   cursor: pointer;
 }
 
 #btn-instrucoes {
-  width:210px;
+  width:60vw;
   display:block;
   padding: 0 0 0 1%;
   cursor: pointer;
@@ -62,7 +62,7 @@ body {
 #btn-garrafa {
   cursor: pointer;
   display:block;
-  width: 80px;
+  width: 13vw;
 }
 
 .btn-menu {
@@ -78,7 +78,7 @@ body {
 }
 
 #display-txt {
-  font-size:1.25em;
+  font-size:3rem;
   color: white;
   padding: 10px 0;
   display: block;
@@ -89,14 +89,14 @@ body {
 
 .txt-instrucoes {
   color:white;
-  font-size:34;
+  font-size:3rem;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
 }
 
 .title-instrucoes {
-  width: 400px;
+  width: 80vw;
   padding-top: 7em;
   padding-left: 3em;
 }
