@@ -10,7 +10,7 @@ body {
 }
 
 /* LARGER SCREENS */
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .title-instrucoes {
     width: 400px;
   }
@@ -30,7 +30,7 @@ body {
 }
 
 /* SMALL SCREENS */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .title-instrucoes {
     width: 80vw;
   }
