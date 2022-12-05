@@ -9,6 +9,46 @@ body {
   src: url('Livvic-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
 }
 
+/* LARGER SCREENS */
+@media (min-width: 640px) {
+  .title-instrucoes {
+    width: 400px;
+  }
+  .txt-instrucoes {
+    font-size:2rem;
+  }
+  .titulo {
+    width:250px;
+    padding-top:200px;
+  }
+  #btn-jogar {
+    width:160px;
+  }
+  #btn-instrucoes {
+    width:210px;
+  }
+}
+
+/* SMALL SCREENS */
+@media (max-width: 640px) {
+  .title-instrucoes {
+    width: 80vw;
+  }
+  .txt-instrucoes {
+    font-size:1.6rem;
+  }
+  .titulo {
+    width:58vw;
+    padding-top:20vh;
+  }
+  #btn-jogar {
+    width:48vw;
+  }
+  #btn-instrucoes {
+    width:60vw;
+  }
+}
+
 .fundo {
   height: 100%;
   background-size: auto 100%;
@@ -34,9 +74,7 @@ body {
 }
 
 .titulo {
-  width:58vw;
   display:block;
-  padding-top:20vh;
 }
 
 .titulo2 {
@@ -46,14 +84,12 @@ body {
 }
 
 #btn-jogar {
-  width:48vw;
   display:block;
   padding-top: 5%;
   cursor: pointer;
 }
 
 #btn-instrucoes {
-  width:60vw;
   display:block;
   padding: 0 0 0 1%;
   cursor: pointer;
@@ -89,14 +125,12 @@ body {
 
 .txt-instrucoes {
   color:white;
-  font-size:3rem;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
 }
 
 .title-instrucoes {
-  width: 80vw;
   padding-top: 7em;
   padding-left: 3em;
 }
