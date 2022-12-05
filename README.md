@@ -12,4 +12,13 @@ Commands
 Compile css
 -----------
 
+```
 sass --watch style.scss:style.css
+```
+
+Run locally
+===========
+
+```
+jekyll serve
+```
