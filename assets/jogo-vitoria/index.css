@@ -35,7 +35,7 @@ body {
     width: 80vw;
   }
   .txt-instrucoes {
-    font-size:1.6rem;
+    font-size:1.5rem;
   }
   .titulo {
     width:58vw;
@@ -114,9 +114,9 @@ body {
 }
 
 #display-txt {
-  font-size:3rem;
+  font-size: 2rem;
   color: white;
-  padding: 10px 0;
+  padding: 6vh 8vw;
   display: block;
   text-align: center;
   margin-left: auto;
